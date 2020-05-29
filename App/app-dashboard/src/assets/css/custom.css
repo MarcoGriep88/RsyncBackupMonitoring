@@ -1,0 +1,65 @@
+.loader {
+    height: 5vmin;
+    left: 50%;
+    margin: 0 0 0 0;
+    position: relative;
+    top: 50%;
+    width: 5vmin;
+  }
+  .loader:before {
+    animation: blueRoute 4s linear infinite;
+    background-color: #09f;
+    content: "";
+    height: 5vmin;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    width: 5vmin;
+  }
+  .loader:after {
+    animation: pinkRoute 4s linear infinite;
+    background-color: #f09;
+    content: "";
+    height: 5vmin;
+    left: 5vmin;
+    opacity: 0.5;
+    position: absolute;
+    top: 5vmin;
+    width: 5vmin;
+  }
+  
+  @keyframes blueRoute {
+    0% {
+      transform: translate(0, 0) rotate(0);
+    }
+    25% {
+      transform: translate(5vmin, 0) rotate(90deg);
+    }
+    50% {
+      transform: translate(5vmin, 5vmin) rotate(180deg);
+    }
+    75% {
+      transform: translate(0, 5vmin) rotate(270deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(360deg);
+    }
+  }
+  @keyframes pinkRoute {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-5vmin, 0);
+    }
+    50% {
+      transform: translate(-5vmin, -5vmin);
+    }
+    75% {
+      transform: translate(0, -5vmin);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
