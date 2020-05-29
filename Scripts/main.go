@@ -65,6 +65,7 @@ func main() {
 		"backupDate": backup_date,
 		"numerOfFiles":    files,
 		"created": created,
+		"backupType": "Mirror"
 	})
 
 	if err != nil {

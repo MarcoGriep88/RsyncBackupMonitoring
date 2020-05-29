@@ -1,0 +1,22 @@
+version: '3'
+services:
+    mysql:
+        image: mysql:5.7
+        container_name: db-backup-rsync-mysql-001
+        restart: always
+        environment:
+          MYSQL_ROOT_PASSWORD: Ramda8xun7dx3m89087x89d7s8a7
+          MYSQL_DATABASE: db_backups
+          MYSQL_USER: db_backups
+          MYSQL_PASSWORD: db_backups28r792347cr589 
+        volumes:
+          - ./storage/mysql:/var/lib/mysql
+    web:
+         build: ./web
+         container_name: api-backup-rsync-lumen-001
+         ports:
+             - 15000:80
+         volumes:
+             - ./web:/var/www
+             - ./storage/app:/var/www/storage/app
+             - ./storage/logs:/var/www/storage/logs
