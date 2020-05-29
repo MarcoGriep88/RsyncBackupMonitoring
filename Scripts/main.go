@@ -29,7 +29,7 @@ func main() {
 	created := ""
 	backup_date := ""
 
-	var allTransferedFiles []string
+	//var allTransferedFiles []string
 
     scanner := bufio.NewScanner(file)
     for scanner.Scan() {
@@ -53,28 +53,42 @@ func main() {
 			continue
 		}
 
-		allTransferedFiles = append(allTransferedFiles, x[4])
+		//allTransferedFiles = append(allTransferedFiles, x[4])
 
-		
     }
     if err := scanner.Err(); err != nil {
         log.Fatal(err)
     }
 
+	hostname, error := os.Hostname()  
+	if error != nil {  
+	 panic(error)  
+	}  
+
 	reqBody, err := json.Marshal(map[string]string{
+		"Hostname": hostname,
 		"backupDate": backup_date,
-		"numerOfFiles":    files,
+		"numerOfFiles": files,
 		"created": created,
-		"backupType": "Mirror"
+		"backupType": "Mirror",
 	})
 
 	if err != nil {
-		print(err)
+		fmt.Println(err)
 	}
 	
-	resp, err := http.Post("http://api-backup-monitoring/create", "application/json", bytes.NewBuffer(reqBody))
+	resp, err := http.Post("http://192.168.112.205:15000/create", "application/json", bytes.NewBuffer(reqBody))
 	if err != nil {
-		print(err)
+		fmt.Println(err)
 	}
-	defer resp.Body.Close()
+
+	sc := resp.StatusCode
+
+	//defer resp.Body.Close()
+
+	if (sc == 200) {
+		fmt.Println("Ok")
+		os.Exit(0)
+	}
+
 }
