@@ -20,3 +20,8 @@ services:
              - ./web:/var/www
              - ./storage/app:/var/www/storage/app
              - ./storage/logs:/var/www/storage/logs
+    frontend:
+         build: ./app-dashboard
+         container_name: app-backup-rsync-apache-001
+         ports:
+             - 15100:80
