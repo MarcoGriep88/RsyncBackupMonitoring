@@ -18,12 +18,14 @@ func check(e error) {
 }
 
 func main() {
-	openFile := os.Args[1:]
-	file, err := os.Open(openFile[0])
+	args := os.Args[1:]
+	file, err := os.Open(args[0])
     if err != nil {
         log.Fatal(err)
     }
     defer file.Close()
+
+	jobname := args[1]
 
 	files := ""
 	created := ""
@@ -70,7 +72,7 @@ func main() {
 		"backupDate": backup_date,
 		"numerOfFiles": files,
 		"created": created,
-		"backupType": "Mirror",
+		"backupType": jobname,
 	})
 
 	if err != nil {
