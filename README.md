@@ -54,3 +54,6 @@ npm run build
 Your Installation should work. Check if you can reach localhost:15000 (You should get an empty json response). Also Check localhost:15100 for the Frontend.
 
 If both work. Do an Test backup and check if the job is listed after the finished backup
+
+
+[German Blog Article about this Software]()
