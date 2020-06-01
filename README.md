@@ -56,4 +56,4 @@ Your Installation should work. Check if you can reach localhost:15000 (You shoul
 If both work. Do an Test backup and check if the job is listed after the finished backup
 
 
-[German Blog Article about this Software]()
+[German Blog Article about this Software](https://www.marcogriep.de/blog/zentrale-rsync-backup-ueberwachung-mit-rsyncbackupmonitor/)
