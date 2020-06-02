@@ -33,7 +33,7 @@ backup_ipsl001.sh
 ```
 sshpass -p "MYPASSWORD" rsync --stats --log-file /home/user/logs/$(date +%Y-%m-%d)_volumes.log -vazP --delete /var/lib/docker/volumes admin@192.168.112.200:/share/Public/ipsl001
 
-/home/user/RsyncBackupReport /home/user/logs/$(date +%Y-%m-%d)_volumes.log "http://locahost:15000" "Mirror-Volumes"
+/home/user/RsyncBackupReport /home/user/logs/$(date +%Y-%m-%d)_volumes.log "http://localhost:15000" "Mirror-Volumes"
 ```
 * Replace "http://localhost:15000" with the IP of your Server where the API is running.
 
