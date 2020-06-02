@@ -4,6 +4,9 @@ Scripts and APIs for Centralized Monitoring of Rsync Backups
 ## What does this Software do?
 This Software (main.go) will check your Rsync Logfiles, analyse them and Report your Rsync Backup Results to an Web API (web). You can monitor your Backups by the Web Frontend (app-dashboard).
 
+## Info about Sponsoring
+This Software lives from Contribution and Support of the Community. If you use this set of Software or find it useful, please consider to donate by the "Sponsoring Button above" (Patreon or PayPal). By Sponsoring this Project you are helping me financing Hosting and Infrastrucuter Costs, help to to improve my skills (Education) and have more freetime to work on this Project. Thanks!
+
 ## How to install this Software?
 I highly recommend to use the rebuild.sh Script in combination with docker and docker-compose. 
 
