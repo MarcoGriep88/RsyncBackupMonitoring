@@ -14,7 +14,6 @@ Steps to install:
 * Install docker and docker-compose on your linux machine.
 * Install go-lang on your linux machine
 * Install npm and nodejs
-* Replace the IP Address in the main.go File to the Docker Container (localhost:15000 if your docker will run on the same host)
 * compile the main.go file with:
 
 ```
@@ -34,8 +33,9 @@ backup_ipsl001.sh
 ```
 sshpass -p "MYPASSWORD" rsync --stats --log-file /home/user/logs/$(date +%Y-%m-%d)_volumes.log -vazP --delete /var/lib/docker/volumes admin@192.168.112.200:/share/Public/ipsl001
 
-/home/user/RsyncBackupReport /home/user/logs/$(date +%Y-%m-%d)_volumes.log "Mirror-Volumes"
+/home/user/RsyncBackupReport /home/user/logs/$(date +%Y-%m-%d)_volumes.log "http://locahost:15000" "Mirror-Volumes"
 ```
+* Replace "http://localhost:15000" with the IP of your Server where the API is running.
 
 After the Rsync Job the RSyncBackupReport will analyse the logfile (Start argument 1) and send the Data to the Web API. "Mirror-Volumes" is the Job Description for the Frontend.
 
