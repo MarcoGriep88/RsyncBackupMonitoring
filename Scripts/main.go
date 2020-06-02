@@ -20,12 +20,18 @@ func check(e error) {
 func main() {
 	args := os.Args[1:]
 	file, err := os.Open(args[0])
-    if err != nil {
-        log.Fatal(err)
-    }
-    defer file.Close()
+    	if err != nil {
+        	log.Fatal(err)
+    	}
+    	defer file.Close()
+	
+	if (len(args) < 3) {
+		fmt.Println("Invalid count of Start Parameters)
+		fmt.Println("main.go [LogfilePath] [Web-API Adress] [Job-Name]")
+	}
 
-	jobname := args[1]
+	api_adress := args[1]
+	jobname := args[2]
 
 	files := ""
 	created := ""
@@ -33,8 +39,8 @@ func main() {
 
 	//var allTransferedFiles []string
 
-    scanner := bufio.NewScanner(file)
-    for scanner.Scan() {
+    	scanner := bufio.NewScanner(file)
+    	for scanner.Scan() {
 		ln := scanner.Text()
 		x := strings.Split(ln, " ")
 
@@ -57,10 +63,10 @@ func main() {
 
 		//allTransferedFiles = append(allTransferedFiles, x[4])
 
-    }
-    if err := scanner.Err(); err != nil {
-        log.Fatal(err)
-    }
+    	}
+    	if err := scanner.Err(); err != nil {
+        	log.Fatal(err)
+    	}
 
 	hostname, error := os.Hostname()  
 	if error != nil {  
@@ -79,7 +85,7 @@ func main() {
 		fmt.Println(err)
 	}
 	
-	resp, err := http.Post("http://192.168.112.205:15000/create", "application/json", bytes.NewBuffer(reqBody))
+	resp, err := http.Post(api_adress+ "/create", "application/json", bytes.NewBuffer(reqBody))
 	if err != nil {
 		fmt.Println(err)
 	}
