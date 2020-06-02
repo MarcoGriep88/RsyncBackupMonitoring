@@ -1,4 +1,4 @@
-# RsyncBackupMonitoring
+# Rsync Backup Monitoring
 Scripts and APIs for Centralized Monitoring of Rsync Backups
 
 ## What does this Software do?
