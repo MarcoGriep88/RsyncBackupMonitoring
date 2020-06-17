@@ -26,7 +26,7 @@ func main() {
     	defer file.Close()
 	
 	if (len(args) < 3) {
-		fmt.Println("Invalid count of Start Parameters)
+		fmt.Println("Invalid count of Start Parameters")
 		fmt.Println("main.go [LogfilePath] [Web-API Adress] [Job-Name]")
 	}
 
