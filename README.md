@@ -58,5 +58,6 @@ Your Installation should work. Check if you can reach localhost:15000 (You shoul
 
 If both work. Do an Test backup and check if the job is listed after the finished backup
 
+[English Blog Article about Rsync Backup Monitoring](https://www.marcogriep.com/blog/central-rsync-backup-monitoring-with-golang-and-lumen-web-api/)
 
-[German Blog Article about this Software](https://www.marcogriep.de/blog/zentrale-rsync-backup-ueberwachung-mit-rsyncbackupmonitor/)
+[German Blog Article about this Rsync Backup Monitoring](https://www.marcogriep.de/blog/zentrale-rsync-backup-ueberwachung-mit-rsyncbackupmonitor/)
