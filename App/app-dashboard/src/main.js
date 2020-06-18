@@ -1,10 +1,10 @@
 import Vue from 'vue'
-import App from './components/App.vue'
 import VueResource from 'vue-resource'
+import VueRouter from 'vue-router';
 
-import About from './components/About.vue'
-import Details from './components/Details.vue'
+import { routes } from './routes';
 
+import App from './App.vue'
 import Header from './components/shared/Header.vue'
 import Footer from './components/shared/Footer.vue'
 
@@ -12,6 +12,11 @@ import BackupOverview from './components/server/BackupOverview.vue'
 import DetailsOverview from './components/server/DetailsOverview.vue'
 
 Vue.use(VueResource);
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+  routes
+});
 
 Vue.component("app-header", Header);
 Vue.component("app-footer", Footer);
@@ -19,21 +24,8 @@ Vue.component("app-footer", Footer);
 Vue.component("app-backup-overview", BackupOverview);
 Vue.component("app-backup-details", DetailsOverview);
 
-const routes = {
-  '/': App,
-  '/about': About,
-  '/details': Details
-}
-
 new Vue({
   el: '#app',
-  data: {
-    currentRoute: window.location.pathname
-  },
-  computed: {
-    ViewComponent () {
-      return routes[this.currentRoute] || NotFound
-    }
-  },
-  render (h) { return h(this.ViewComponent) }
+  router,
+  render: h => h(App)
 })

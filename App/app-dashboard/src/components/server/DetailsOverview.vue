@@ -1,6 +1,8 @@
 <template>
       <main>
         <div class="container-fluid">
+          <br/>
+          <h3>Backup ID: {{ id }}</h3>
           <div class="row">
             <div class="col-xl-12 col-md-12 mb-12">
               <div class="card border-left-primary shadow h-100 py-2">
@@ -19,12 +21,8 @@
               </div>
             </div>
           </div>
-
           <br/>
-
           <div class="row">
-
-            <!-- Area Chart -->
             <div class="col-xl-12 col-md-12 mb-12">
               <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -39,7 +37,6 @@
                     </div>
                   </div>
                 </div>
-                <!-- Card Body -->
                 <div class="card-body">
                   <div class="chart-area">
                     <div class="loader" v-if="Loader"></div>
@@ -74,6 +71,7 @@
 export default {
   data() {
     return {
+      id: this.$route.params.id,
       info: {
         id: '',
         fk_backupId: '',
@@ -97,7 +95,7 @@ export default {
       this.fetchData();
     },
     fetchData() {
-      this.$http.get('http://localhost:15000/files/1')
+      this.$http.get('http://localhost:15000/files/'+ this.id)
           .then(response => {
             return response.json();
           })

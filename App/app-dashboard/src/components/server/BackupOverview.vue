@@ -55,7 +55,7 @@
                       </thead>
                       <tbody>
                       <tr v-for="u in infos" :key="u.id">
-                        <td><a :href="'/details/' + u.id">{{ u.Hostname }}</a></td>
+                        <td><router-link :to="{ path: '/details/' + u.id }"><a>{{ u.Hostname }}</a></router-link></td>
                         <td>{{ u.backupDate }}</td>
                         <td>{{ u.numerOfFiles }}</td>
                         <td>{{ u.created }}</td>
