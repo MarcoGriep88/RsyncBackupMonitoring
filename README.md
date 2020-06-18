@@ -65,3 +65,4 @@ If both work. Do an Test backup and check if the job is listed after the finishe
 
 ## Release Notes
 * Script now reports each file the monitoring server that has been in backup
+* Changed Routing in VueJS Application to vue-router
