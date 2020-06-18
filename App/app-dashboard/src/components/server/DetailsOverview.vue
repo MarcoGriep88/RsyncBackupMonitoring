@@ -95,7 +95,7 @@ export default {
       this.fetchData();
     },
     fetchData() {
-      this.$http.get('http://localhost:15000/files/'+ this.id)
+      this.$http.get('http://192.168.112.205:15000/files/'+ this.id)
           .then(response => {
             return response.json();
           })

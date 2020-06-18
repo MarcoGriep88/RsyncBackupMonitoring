@@ -104,7 +104,7 @@ export default {
       this.fetchData();
     },
     fetchData() {
-      this.$http.get('http://localhost:15000/')
+      this.$http.get('http://192.168.112.205:15000/')
           .then(response => {
             return response.json();
           })
