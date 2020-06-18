@@ -64,5 +64,8 @@ If both work. Do an Test backup and check if the job is listed after the finishe
 
 
 ## Release Notes
+
+### 2020-06-18
 * Script now reports each file the monitoring server that has been in backup
 * Changed Routing in VueJS Application to vue-router
+* Created an Component in VueJS Application to display each backuped filed
