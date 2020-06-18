@@ -61,3 +61,7 @@ If both work. Do an Test backup and check if the job is listed after the finishe
 [English Blog Article about Rsync Backup Monitoring](https://www.marcogriep.com/blog/central-rsync-backup-monitoring-with-golang-and-lumen-web-api/)
 
 [German Blog Article about this Rsync Backup Monitoring](https://www.marcogriep.de/blog/zentrale-rsync-backup-ueberwachung-mit-rsyncbackupmonitor/)
+
+
+## Release Notes
+* Script now reports each file the monitoring server that has been in backup
