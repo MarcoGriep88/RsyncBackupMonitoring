@@ -9,7 +9,14 @@ import (
 	"net/http"
 	"encoding/json"
 	"bytes"
+	"io/ioutil"
+	"strconv"
 )
+
+type BackupResult struct {
+	Id int64
+	Hostname string
+}
 
 func check(e error) {
     if e != nil {
@@ -92,30 +99,47 @@ func main() {
 
 	sc := resp.StatusCode
 
-	//defer resp.Body.Close()
+	defer resp.Body.Close()
 
 	if (sc == 200) {
 		fmt.Println("Ok")
 
-		backup_id := defer resp.Body
+		var r BackupResult
+
+		bodyBytes, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			log.Fatal(err)
+		}
+		bodyString := string(bodyBytes)
+		fmt.Println(bodyString)
+		
+		json.Unmarshal([]byte(bodyString), &r)
+		fmt.Println(r.Hostname)
+		backup_id := r.Id
 
 		for i:=0; i < len(allTransferedFiles); i++ {
-			//reqBody, err := json.Marshal(map[string]string{
-			//	"fk_backup_id": backup_id,
-			//	"file": allTransferedFiles[i]
-			//})
-
 			fmt.Println(allTransferedFiles[i])
+			string_backup_id := strconv.FormatInt(int64(backup_id), 10)
+			reqBody, err := json.Marshal(map[string]string{
+				"fk_backupId": string_backup_id,
+				"file": allTransferedFiles[i],
+			})
 
-			/*
+			fmt.Println(string(reqBody))
+			
 			resp, err := http.Post(api_adress+ "/file", "application/json", bytes.NewBuffer(reqBody))
 			if err != nil {
 				fmt.Println(err)
-			}*/
+			}
+			defer resp.Body.Close()
 
-			//if (resp.StatusCode == 200) {
-				//
-			//}
+			if resp.StatusCode == 200 {
+				fmt.Println("OK")
+			}
+
+			if resp.StatusCode == 201 {
+				fmt.Println("OK")
+			}
 		}
 
 		os.Exit(0)

@@ -18,6 +18,8 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('/', 'Controller@index');
+$router->get('/backups/{id}', 'Controller@show_by_id');
+$router->get('/files/{id}', 'Controller@show_files_by_id');
 $router->post('/create', 'Controller@create');
 $router->post('/file', 'Controller@file');
 $router->post('/clear', 'Controller@clear');

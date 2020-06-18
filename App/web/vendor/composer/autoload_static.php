@@ -433,6 +433,7 @@ class ComposerStaticInit37e1017e863a3e52c6a2290b3d525378
     );
 
     public static $classMap = array (
+        'App\\BackupInfo' => __DIR__ . '/../..' . '/app/BackupInfo.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Events\\Event' => __DIR__ . '/../..' . '/app/Events/Event.php',
         'App\\Events\\ExampleEvent' => __DIR__ . '/../..' . '/app/Events/ExampleEvent.php',

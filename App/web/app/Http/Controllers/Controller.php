@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use App\BackupInfo;
+use App\FileInfo;
 use Response;
 
 class Controller extends BaseController
@@ -24,7 +25,7 @@ class Controller extends BaseController
     }
 
     public function show_files_by_id($id) {
-        $result = FileInfo::where("fk_backupId", $id)->first();
+        $result = FileInfo::all()->where("fk_backupId", $id);
         return response()->json($result);
     }
 
@@ -36,7 +37,7 @@ class Controller extends BaseController
 
         if ($checkElems!=null)
         {
-            return "Already exists";
+            return $checkElems;
         }
 
         $obj = new BackupInfo;
@@ -61,7 +62,7 @@ class Controller extends BaseController
 
         if ($checkElems!=null)
         {
-            return "Already exists";
+            return $checkElems;
         }
 
         $obj = new FileInfo;

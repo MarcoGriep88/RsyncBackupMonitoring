@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BackupInfo extends Model
+class FileInfo extends Model
 {
     /**
      * The table associated with the model.
