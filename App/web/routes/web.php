@@ -19,4 +19,5 @@ $router->get('/', function () use ($router) {
 
 $router->get('/', 'Controller@index');
 $router->post('/create', 'Controller@create');
+$router->post('/file', 'Controller@file');
 $router->post('/clear', 'Controller@clear');

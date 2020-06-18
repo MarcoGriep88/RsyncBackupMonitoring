@@ -23,6 +23,11 @@ class Controller extends BaseController
         return response()->json($result);
     }
 
+    public function show_files_by_id($id) {
+        $result = FileInfo::where("fk_backupId", $id)->first();
+        return response()->json($result);
+    }
+
     public function create(Request $request) {
         $checkElems = BackupInfo::where('Hostname', $request->Hostname)
                 ->where('backupDate', $request->backupDate)
@@ -43,6 +48,26 @@ class Controller extends BaseController
         $obj->created = $request->created;
         $obj->backupType = $request->backupType;
 
+        $obj->save();
+
+        return $obj;
+    }
+
+    
+    public function file(Request $request) {
+        $checkElems = FileInfo::where('fk_backupId', $request->fk_backupId)
+                ->where('file', $request->file)
+                ->first();
+
+        if ($checkElems!=null)
+        {
+            return "Already exists";
+        }
+
+        $obj = new FileInfo;
+
+        $obj->fk_backupId = $request->fk_backupId;
+        $obj->file = $request->file;
         $obj->save();
 
         return $obj;

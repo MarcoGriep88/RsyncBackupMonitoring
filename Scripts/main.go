@@ -37,7 +37,7 @@ func main() {
 	created := ""
 	backup_date := ""
 
-	//var allTransferedFiles []string
+	var allTransferedFiles []string
 
     	scanner := bufio.NewScanner(file)
     	for scanner.Scan() {
@@ -61,7 +61,7 @@ func main() {
 			continue
 		}
 
-		//allTransferedFiles = append(allTransferedFiles, x[4])
+		allTransferedFiles = append(allTransferedFiles, x[4])
 
     	}
     	if err := scanner.Err(); err != nil {
@@ -96,6 +96,28 @@ func main() {
 
 	if (sc == 200) {
 		fmt.Println("Ok")
+
+		backup_id := defer resp.Body
+
+		for i:=0; i < len(allTransferedFiles); i++ {
+			//reqBody, err := json.Marshal(map[string]string{
+			//	"fk_backup_id": backup_id,
+			//	"file": allTransferedFiles[i]
+			//})
+
+			fmt.Println(allTransferedFiles[i])
+
+			/*
+			resp, err := http.Post(api_adress+ "/file", "application/json", bytes.NewBuffer(reqBody))
+			if err != nil {
+				fmt.Println(err)
+			}*/
+
+			//if (resp.StatusCode == 200) {
+				//
+			//}
+		}
+
 		os.Exit(0)
 	}
 
