@@ -70,3 +70,4 @@ If both work. Do an Test backup and check if the job is listed after the finishe
 * Changed Routing in VueJS Application to vue-router
 * Created an Component in VueJS Application to display each backuped filed
 * Created an Rebuild Shellscript for the App-Dashboard
+* Bugfix in App-Dashboard (VueJS APP) in Table-Ordering
