@@ -1,3 +1,6 @@
 /Desktop/BackupMonitoring/nbproject/private/
 /Desktop/BackupMonitoringApp/nbproject/private/
 /Desktop/BackupMonitoringApp/build/
+App/storage/mysql/ib_logfile0
+App/storage/mysql/ibdata1
+App/storage/mysql/ibtmp1
