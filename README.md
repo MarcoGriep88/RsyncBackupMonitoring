@@ -1,6 +1,17 @@
 # Rsync Backup Monitoring
 Scripts and APIs for Centralized Monitoring of Rsync Backups
 
+# IMPORT INFORMATION
+I CURRENTLY WORK ON AN EXTENDED VERSION OF THIS SOFTWARE. THERE WILL BE AN NEW VERSION ON GITLAB SOON (I will link it here). THE NEW VERSION WILL NOT BE COMPATIBLE BECAUSE I COMPLETLY REDESIGN THIS APPLICATION. WHAT WILL BE NEW:
+
+* Login
+* User Management
+* Better Parsing from Logfiles
+* Better Docker-Compose Setup
+* VueJS Application will be Redesigned and Work with Vuetify
+* Calender Integration
+* Logfiles will be uploaded so you can delete them on your host
+
 ## What does this Software do?
 This Software (main.go) will check your Rsync Logfiles, analyse them and Report your Rsync Backup Results to an Web API (web). You can monitor your Backups by the Web Frontend (app-dashboard).
 
