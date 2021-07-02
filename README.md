@@ -69,9 +69,8 @@ Your Installation should work. Check if you can reach localhost:15000 (You shoul
 
 If both work. Do an Test backup and check if the job is listed after the finished backup
 
-[English Blog Article about Rsync Backup Monitoring](https://www.marcogriep.com/blog/central-rsync-backup-monitoring-with-golang-and-lumen-web-api/)
 
-[German Blog Article about this Rsync Backup Monitoring](https://www.marcogriep.de/blog/zentrale-rsync-backup-ueberwachung-mit-rsyncbackupmonitor/)
+[German Blog Article about this Rsync Backup Monitoring](https://www.protoncode.eu/post/zentrale-rsync-backup-ueberwachung-mit-go-lang-und-vuejs/)
 
 
 ## Release Notes
@@ -82,3 +81,6 @@ If both work. Do an Test backup and check if the job is listed after the finishe
 * Created an Component in VueJS Application to display each backuped filed
 * Created an Rebuild Shellscript for the App-Dashboard
 * Bugfix in App-Dashboard (VueJS APP) in Table-Ordering
+
+# Contact
+If you have any questions, dont hestitate to write me an E-Mail. See the Contact Information on my [IT-Consultant](https://www.marcogriep.de) Webpage.
